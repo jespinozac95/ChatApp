@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="pouchdb/pouchdb-5.3.1.min.js"></script>
+        <title>ChatApp</title>
+        
+    </head>
+    <body>
+        <div class="app">
+            <h1>ChatApp</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Conexión en proceso...</p>
+                <p class="event received">Listos para hablar!</p>
+
+            </div>
+
+            <form id="LogInForm">
+            
+            <br>
+            <label>Nombre de Usuario:</label>
+            <!--<img src="img/ic_username.png" width="50" height="50"> -->
+            <input type="text" id="codUsuario" />
+            <br><br>
+
+            <label>Contraseña:</label>
+            <input type="password" id="codContrasena" />
+            <br><br>
+            <label>Estado:</label>
+            <select id="estado">
+                <option value="Disponible" selected>Disponible</option>
+                <option value="Ocupado">Ocupado</option>
+            </select>
+            <br><br>
+            </form>
+            
+            <script type="text/javascript">
+            function processLogInForm()
+            {
+                var usuario = document.getElementById("codUsuario").value;
+                document.getElementById("demo").innerHTML = "Bienvenido "+usuario+"!";
+            }
+            </script>
+
+            <button type="button" onClick="processLogInForm()">Ingresar</button>
+            <p id="demo"></p>
+            <!--<button class="button button2">No ingresar</button>-->
+            <br><br>
+            <br>
+            <a href="http://www.facebook.com" target="new">Facebook</a>
+
+            <a href="registro.html" target="_blank">Regístrese</a>
+
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
